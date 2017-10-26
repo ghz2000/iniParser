@@ -265,7 +265,7 @@ void handleProcIni(){
   message += "<FORM method=POST action=/setini><TEXTAREA NAME=ini cols=100 rows=40>";
 
             CiniParser testini;
-            if(testini.setIniFileName( "/temp.ini" )){
+            if(testini.setIniFileName( INIFNM )){
               message += "didn't open";
             }
             testini.readIniFile(&message);

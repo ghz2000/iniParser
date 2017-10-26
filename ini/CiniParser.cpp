@@ -33,7 +33,8 @@ int CiniParser::setIniFileName(char *fnm){
 
   if(!SPIFFS.exists(iniFileName)){
     DebugPrintln("no file in setIniFileName");
-    DebugPrintln(iniFileName);
+    DebugPrint("Create : ");
+    DebugPrintln( createIniFile() );
     return -1;
   }
   return 0;
@@ -71,7 +72,7 @@ int CiniParser::createIniFile(){
     file.close();
   }  
 
-  if(SPIFFS.exists(iniFileName)){
+  if(!SPIFFS.exists(iniFileName)){
     return 3;
   }
   return 0;

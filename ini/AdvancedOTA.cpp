@@ -196,6 +196,9 @@ void wifiSetup(ESP8266WiFiMulti *WiFiMulti, ESP8266WebServer *server){
   }
   Serial.print("AP mode IP:");
   Serial.println(WiFi.softAPIP());
+  Serial.print(ap_ssid);
+  Serial.print(" : ");
+  Serial.println(ap_pass);
 
 
   ini.rwIni("WiFi", "SSID", &ssid, READ);
